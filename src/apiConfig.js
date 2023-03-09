@@ -1,6 +1,6 @@
 let apiUrl
 const apiUrls = {
-  production: 'http://agenciflow-hackathon-api.vercel.app/',
+  production: 'https://agenciflow-hackathon-api.vercel.app',
   development: 'http://localhost:4741'
 }
 
