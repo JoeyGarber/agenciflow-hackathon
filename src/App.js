@@ -1,26 +1,22 @@
 import './App.css';
-import Homepage from './pages/homepage/homepage';
-import Login from './pages/login/login';
-import Register from './pages/register/register';
 import { BrowserRouter as Router, Routes} from "react-router-dom";
 import { Route } from "react-router";
-import { useState } from 'react';
 
-
+import Homepage from './components/homepage';
+import SignIn from './components/sign-in';
+import SignUp from './components/sign-up';
 
 function App() {
-  const [user, setLoginUser] = useState({})
   return (
-    <div className="App">
+    <main>
       <Router>
         <Routes>
-          <Route exact path="/" element={user && user._id ? <Homepage setLoginUser={setLoginUser}/> : <Login setLoginUser={setLoginUser}/>} />
-          <Route path="/login" element={<Login setLoginUser={setLoginUser}/>} />
-          <Route path="/register" element={<Register />} />
+          <Route exact path="/" element={<Homepage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </Router>
-      {/* < Homepage /> */}
-    </div>
+    </main>
   );
 }
 
