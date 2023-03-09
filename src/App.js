@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import TodoKanban from './pages/components/Kanban';
 
 function App() {
+  const columns = [
+    {
+      id: 'column-1',
+      title: 'To Do',
+      tasks: []
+    },
+    {
+      id: 'column-2',
+      title: 'In Progress',
+      tasks: []
+    },
+    {
+      id: 'column-3',
+      title: 'Done',
+      tasks: []
+    }
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodoKanban columns={columns}/>
     </div>
   );
 }
