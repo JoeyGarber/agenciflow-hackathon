@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { signIn } from '../api/auth'
+import { signIn } from '../../api/auth.js'
 
-import { useAuth } from '../providers/authProvider'
+import { useAuth } from '../../providers/authProvider'
 
 function SignIn () {
   const [email, setEmail] = useState('')

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { signUp, signIn } from '../api/auth.js'
+import { signUp, signIn } from '../../api/auth.js'
 
-import { useAuth } from '../providers/authProvider.js'
+import { useAuth } from '../../providers/authProvider.js'
 
 function SignUp () {
   const [email, setEmail] = useState('')
