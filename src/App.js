@@ -10,6 +10,11 @@ import TodoList from './components/todo';
 
 function App() {
   return (
+<<<<<<< HEAD
+    <div className="App">
+      
+    </div>
+=======
     <main>
       <Router>
         <Routes>
@@ -21,6 +26,7 @@ function App() {
         </Routes>
       </Router>
     </main>
+>>>>>>> 8b0912d951e4c85c50226dfbafdc6cd8fdbdea7c
   );
 }
 
