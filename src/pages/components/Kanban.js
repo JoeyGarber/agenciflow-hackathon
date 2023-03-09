@@ -5,7 +5,24 @@ import { BsFilter } from 'react-icons/bs';
 import { IoMdAdd } from 'react-icons/io';
 import { RiSettings5Fill } from 'react-icons/ri';
 
-const TodoKanban = ({ columns }) => {
+const TodoKanban = () => {
+  const columns = [
+    {
+      id: "column-1",
+      title: "To Do",
+      tasks: [],
+    },
+    {
+      id: "column-2",
+      title: "In Progress",
+      tasks: [],
+    },
+    {
+      id: "column-3",
+      title: "Done",
+      tasks: [],
+    },
+  ];
   const [boardColumns, setBoardColumns] = useState(columns);
   const [newTask, setNewTask] = useState('');
   const [showForm, setShowForm] = useState(false);
@@ -82,7 +99,7 @@ const TodoKanban = ({ columns }) => {
   }, [boardColumns]);
 
   const onDragEnd = (result) => {
-    const { destination, source } = result;
+    const { destination, source, draggableId } = result;
 
     if (!destination) {
       return;
@@ -131,7 +148,7 @@ const TodoKanban = ({ columns }) => {
 
   return (
     <div>
-      <div className="rounded-2xl min-h-[80vh] mb-10 dark:bg-agencyGrey p-8 outline outline-2 outline-agencyOutline">
+      <div className="min-h-[80vh] mb-10 dark:bg-agencyGrey p-8 outline outline-2 outline-agencyOutline">
         <div className="flex mb-4 justify-between items-center">
           <div>
             <h2 className="text-3xl font-bold mb-1 text-white">Get Started Here</h2>
