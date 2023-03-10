@@ -12,6 +12,10 @@ import ClientManagement from './components/clientmanagement';
 import Navbar from './components/Navbar';
 import { useAuth } from './providers/authProvider';
 import PrivateRoute from './providers/privateRoute';
+import Dashboard from './pages/components/dashboard'
+import Invoices from './pages/components/invoices';
+import StripePage from './pages/components/stripe';
+import Subscriptions from './pages/components/subscriptions';
 
 function App() {
   const { user } = useAuth()
@@ -29,8 +33,13 @@ function App() {
               <Route path="/list" element={<TodoList />} />
               <Route path="/chat" element={<Chat />} />
               <Route path="/clientmanagement" element={<ClientManagement />} />
+              <Route path="/invoices" element={<Invoices />} />
+              <Route path="/stripe" element={<StripePage />} />
+              <Route path="/subscriptions" element={<Subscriptions />} />
             </Route>
-          </Routes>
+            <Route exact path="/dashboard" element={<Dashboard />} />
+         
+        </Routes>
         </div>
       </Router>
     </main>
