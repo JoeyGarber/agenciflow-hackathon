@@ -10,13 +10,15 @@ import TodoList from './components/todo';
 import Chat from './components/chat'
 import ClientManagement from './components/clientmanagement';
 import Navbar from './components/Navbar';
+import { useAuth } from './providers/authProvider';
 
 function App() {
+  const { user } = useAuth()
   return (
     <main>
       <Router>
         <div>
-          <Navbar />
+          { user && <Navbar /> }
           <Routes>
             <Route exact path="/" element={<Homepage />} />
             <Route path="/signin" element={<SignIn />} />
