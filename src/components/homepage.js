@@ -1,13 +1,12 @@
 import React from 'react'
-
-// import { useAuth } from '../providers/authProvider'
+import fishinsea from '../assets/fishinsea.png'
 
 function Homepage () {
-  // const { user } = useAuth()
   return (
     <div className='homepage flex flex-col items-center'>
       <h1 className='text-4xl font-bold'>Welcome to FishInSea</h1>
-      <p>...Get it? Yeah you get it.</p>
+      <p className='p-3 text-2xl'>We think you're going to like it here</p>
+      <img src={fishinsea} className='p-4' alt="AgenciFlow logo" />
     </div>
   )
 }
