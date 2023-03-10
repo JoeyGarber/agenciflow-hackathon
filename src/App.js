@@ -28,7 +28,7 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route element={<PrivateRoute />} >
-              <Route exact path="/" element={<Homepage />} />
+              <Route exact path="/" element={<Dashboard />} />
               <Route path="/kanban" element={<TodoKanban />} />
               <Route path="/list" element={<TodoList />} />
               <Route path="/chat" element={<Chat />} />
