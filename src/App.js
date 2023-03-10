@@ -11,6 +11,7 @@ import Chat from './components/chat'
 import ClientManagement from './components/clientmanagement';
 import Navbar from './components/Navbar';
 import { useAuth } from './providers/authProvider';
+import PrivateRoute from './providers/privateRoute';
 
 function App() {
   const { user } = useAuth()
@@ -20,13 +21,15 @@ function App() {
         <div>
           { user && <Navbar /> }
           <Routes>
-            <Route exact path="/" element={<Homepage />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/kanban" element={<TodoKanban />} />
-            <Route path="/list" element={<TodoList />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/clientmanagement" element={<ClientManagement />} />
+            <Route element={<PrivateRoute />} >
+              <Route exact path="/" element={<Homepage />} />
+              <Route path="/kanban" element={<TodoKanban />} />
+              <Route path="/list" element={<TodoList />} />
+              <Route path="/chat" element={<Chat />} />
+              <Route path="/clientmanagement" element={<ClientManagement />} />
+            </Route>
           </Routes>
         </div>
       </Router>
