@@ -25,7 +25,7 @@ const data = [
 
 function ClientManagement () {
   return (
-      <div className='bg-agencyGrey h-screen rounded-xl m-6 p-6 py-0'>
+      <div className='bg-agencyGrey h-[85vh] rounded-xl m-6 p-6 py-0'>
           <Header name="Client"/>
           <div className='flex flex-wrap gap-8'>
               {data.map((user, index) => <InfoCard key={index} {...user}/>)}
