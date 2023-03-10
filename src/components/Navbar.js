@@ -30,6 +30,12 @@ function Navbar() {
           <Link to='/kanban' className="hover:border-black cursor-pointer rounded outline-none text-white">
             Task Board
           </Link>
+          <Link to='/stripe' className="hover:border-black cursor-pointer rounded outline-none text-white">
+            Stripe
+          </Link>
+          <Link to='/invoices' className="hover:border-black cursor-pointer rounded outline-none text-white">
+            Invoices
+          </Link>
         </li>
       </ul>
     </nav>
