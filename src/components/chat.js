@@ -21,7 +21,7 @@ function Chat() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-gray-100 text-gray-900">
+    <div className="flex flex-col h-[92vh] bg-gray-100 text-gray-900">
       <header className="bg-gray-800 text-white px-4 py-2">
         <h1 className="text-lg font-semibold">{user?.email || 'User not logged in'}</h1>
       </header>
