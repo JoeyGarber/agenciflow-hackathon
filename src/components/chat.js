@@ -28,7 +28,7 @@ function Chat() {
       <main className="flex-grow p-4 flex flex-col">
         <div className="flex-grow overflow-y-auto">
           {messages.map((message) => (
-            <p key={message.id} className={`p-2 rounded-lg ${message.data.sender === user?.email ? 'bg-blue-500 text-white ml-auto' : 'bg-gray-200 text-gray-900 mr-auto'} my-2`}>{message.data.text}</p>
+            <p key={message.id} className={`p-2 rounded-lg ${message.data.sender === user?.email ? 'bg-blue-500 text-white ml-auto' : 'bg-gray-200 text-gray-900 mr-auto'} my-2 w-1/3`}>{message.data.text}</p>
           ))}
         </div>
         <div className="flex mt-4">
