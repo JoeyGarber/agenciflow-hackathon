@@ -5,9 +5,9 @@ import React from 'react'
 function Homepage () {
   // const { user } = useAuth()
   return (
-    <div className='homepage'>
-      <h1>Homepage</h1>
-      <p>This will be the landing page</p>
+    <div className='homepage flex flex-col items-center'>
+      <h1 className='text-4xl font-bold'>Welcome to FishInSea</h1>
+      <p>...Get it? Yeah you get it.</p>
     </div>
   )
 }
