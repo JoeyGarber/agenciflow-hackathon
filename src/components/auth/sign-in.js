@@ -15,7 +15,7 @@ function SignIn () {
     signIn({ email, password })
     .then((response) => setUser(response.data.user))
     .then(() => console.log('Sign-In success!'))
-    .then(() => navigate('/chat'))
+    .then(() => navigate('/'))
     .catch((error) => {
       console.error(error)
     })
