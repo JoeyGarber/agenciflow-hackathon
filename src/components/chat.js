@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { configureAbly, useChannel } from '@ably-labs/react-hooks';
 import apiUrl from "../apiConfig";
+import { useAuth } from '../providers/authProvider';
 
 // We can use a authCallback instead of authUrl for this if we want to make sure
 // that only signed-in users use this. Then we can use requireToken on the backend, too.
@@ -9,12 +10,15 @@ import apiUrl from "../apiConfig";
 configureAbly({ authUrl: apiUrl + '/ably-auth'})
 
 function Chat () {
+  const { user } = useAuth()
+
   const [messages, setMessages] = useState([])
   const [sendMessage, setSendMessage] = useState('')
   // I could put this hook inside of a function that's activated when a user joins a channel
   // Then a user could subscribe and unsubscribe to channels at will
   const [channel, ably] = useChannel('test-channel', (message) => {
     console.log(message)
+    setMessages((prev) => [...prev, message])
   })
 
   // Ably doesn't persist messages, they offer webhooks so we can persist them in our own DB.
@@ -30,8 +34,16 @@ function Chat () {
 
   return (
     <div>
+      <h1>{user?.email || 'User not logged in'}</h1>
+      <div className='h-[80vh]'>
+      {messages.map((message) => {
+      return (
+        <p key={message.id}>{message.data.text}</p>
+      )
+      })}
+      </div>
       <input className='outline' type='text' value={sendMessage} onChange={(e) => setSendMessage(e.target.value)} />
-      <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline' onClick={postMessage}>Post Message</button>
+      <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline' onClick={postMessage}>Send</button>
     </div>
   )
 }
