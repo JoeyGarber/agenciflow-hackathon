@@ -8,6 +8,7 @@ import SignUp from './components/auth/sign-up';
 import TodoKanban from './components/kanban';
 import TodoList from './components/todo';
 import Chat from './components/chat'
+import ClientManagement from './components/clientmanagement';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/kanban" element={<TodoKanban />} />
           <Route path="/list" element={<TodoList />} />
           <Route path="/chat" element={<Chat />} />
+          <Route path="/clientmanagement" element={<ClientManagement />} />
         </Routes>
       </Router>
     </main>
