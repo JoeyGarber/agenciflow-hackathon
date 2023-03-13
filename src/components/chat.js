@@ -3,7 +3,7 @@ import { configureAbly, useChannel } from '@ably-labs/react-hooks';
 import apiUrl from "../apiConfig";
 import { useAuth } from '../providers/authProvider';
 
-configureAbly({ authUrl: apiUrl + '/ably-auth' });
+configureAbly({ authUrl: apiUrl + '/api/ably_routes/ably-auth' });
 
 function Chat() {
   const { user } = useAuth();
